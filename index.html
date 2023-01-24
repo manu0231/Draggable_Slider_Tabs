@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Draggable Slider Tabs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/index-e3ce5d52.css">
+  </head>
+  <style>
+    body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    --tw-bg-opacity: 1;
+    background-color: rgb(37 99 235 / var(--tw-bg-opacity))
+}
+    .container {
+    position: relative;
+    max-width: 1000px;
+    overflow-x: hidden;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 30px
+}
+
+    .icon {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    height: 100%;
+    width: 120px;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 2rem
+}
+
+    .icon:first-child {
+    left: 0px;
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    --tw-gradient-from: #fff;
+    --tw-gradient-to: rgb(255 255 255 / 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: transparent
+}
+
+    .icon:last-child {
+    right: 0px;
+    justify-content: flex-end;
+    background-image: linear-gradient(to left, var(--tw-gradient-stops));
+    --tw-gradient-from: #fff;
+    --tw-gradient-to: rgb(255 255 255 / 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: transparent
+}
+    .icon i {
+    display: flex;
+    height: 3.5rem;
+    width: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem
+}
+    .icon i:first-child {
+    margin-left: 1rem
+}
+    .icon i:last-child {
+    margin-right: 1rem
+}
+    .tab-box {
+    display: flex;
+    list-style-type: none;
+    gap: 0.5rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth
+}
+    .tab-box.dragging {
+    cursor: grab;
+    scroll-behavior: auto
+}
+    .tab-box.dragging .tab {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none
+}
+    .tab {
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 9999px;
+    border-width: 1px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-transform: capitalize
+}
+    .tab:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+
+    .tab-box .tab.active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity))
+}
+  </style>
+  <script src="./app.js" defer></script>
+  <body>
+    <div class="container">
+      <div class="icon">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+      </div>
+      <ul class="tab-box">
+        <li class="tab active">All</li>
+        <li class="tab">Web Development</li>
+        <li class="tab">python</li>
+        <li class="tab">java</li>
+        <li class="tab">kotlin</li>
+        <li class="tab">php</li>
+        <li class="tab">machine learning</li>
+        <li class="tab">javascript</li>
+        <li class="tab">nodejs</li>
+        <li class="tab">postman</li>
+        <li class="tab">reactjs</li>
+        <li class="tab">laravel</li>
+        <li class="tab">mern</li>
+      </ul>
+      <div class="icon">
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
+    </div>
+  </body>
+</html>
